@@ -53,10 +53,10 @@ class ControllerCollection extends \Silex\ControllerCollection
 		parent::__call($method, $arguments);
 		
 		foreach ($this->controllers as $controller) {
-            if ($controller instanceof \Silex\ControllerCollection) {
-                call_user_func_array(array($controller, $method), $arguments);
-            }
-        }
+			if ($controller instanceof \Silex\ControllerCollection) {
+				call_user_func_array(array($controller, $method), $arguments);
+			}
+		}
 		
 		return $this;
 	}
